@@ -1,16 +1,18 @@
-interface CountryAdvisory {
+interface SmartravellerCountry {
+  name: string;
+  alpha_2: string;
+}
+
+interface SmartravellerAdvisory {
+  country: SmartravellerCountry;
   advisory: string;
   level: number;
   page_url: string;
-  country: string;
-  alpha_2: string;
-  official_name?: string;
 }
 
-interface AdvisoryResponse {
+interface SmartravellerAdvisoryResponse {
   last_updated: string;
-  advisories: {
-    [alpha2: string]: CountryAdvisory;
-  };
+  advisories: SmartravellerAdvisory[];
 }
-export default AdvisoryResponse;  
+
+export default SmartravellerAdvisoryResponse;
